@@ -1,0 +1,8 @@
+
+<% @Stations.each do |station| %>
+<%= content_tag_for :div, station do %>					
+		
+		<h3><%= station.address %></h3>
+		
+<% end %>
+<% end %>

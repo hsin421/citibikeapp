@@ -1,0 +1,42 @@
+$('#stationlist').append(' <%= j render partial: "fire" %> ').hide();
+$("#stationlist").slideDown("slow");
+
+
+function delete_repeat() {
+
+var stlg = $(".station").length;
+var myArray = [];
+if(stlg>0){
+for(i=stlg/2; i<stlg; i++){
+	myArray.push("#"+$(".station")[i].id)
+}}
+for(j=0; j<myArray.length; j++){
+	$(myArray[j]).remove()
+}
+};
+
+function clickable() {
+
+		var stlg = $(".station").length;
+		var myArray = [];
+		if(stlg>0){
+		for(i=0; i<stlg; i++){
+			myArray.push("#"+$(".station")[i].id)
+		}
+		for(j=0; j<myArray.length; j++){
+			
+			$(myArray[j]).on("click", function(){
+              $.ajax({
+                     type: 'POST',
+       				 url: '/data',
+     			     data: {station_select: $(this)[0].id},
+
+              })
+				
+			})
+		}}
+		};
+
+
+delete_repeat();
+clickable();

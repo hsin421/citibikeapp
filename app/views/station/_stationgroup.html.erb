@@ -1,0 +1,8 @@
+<% i = 0 %>
+<% @stationgroup.each do |station| %>
+<%= content_tag_for :div, station do %>					
+		
+		<h1 style="color:black"><%= @bikes[i] %>  <%= station.address %> <%= @docks[i] %> </h1>
+		<% i +=1 %>
+<% end %>
+<% end %>

@@ -1,0 +1,12 @@
+<%= form_for(@user) do |f| %>
+	<%= f.label :fname %>
+	<%= f.text_field :fname   %>
+	<%= f.submit :create           %>
+	<% end %>
+
+
+	<%= form_tag('/search' method: "get") %>
+	<%=  label.tag(:query "Search:" %>
+	<%=  text_field_tag(:query)       %>
+	<%=  submit_tag(“Submit”)          %>
+	<% end %>
