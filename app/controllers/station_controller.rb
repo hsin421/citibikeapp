@@ -77,7 +77,7 @@ def data
 	dist_list = []
 	dist_list_id = []
 	dist_list_sort_id = []
-	for a in (4..335)
+	for a in (1..332)
 		dist_list << Station_dist(station, Station.find(a))
 		dist_list_id << a
 	end
