@@ -1,3 +1,4 @@
-$(".station").fadeOut();
-$("#bikepng").animate({width: "15%"}, 800)
-$("#stationlist").append(' <%= j render partial: "stationgroup" %> ').fadeIn("slow");
+$("#loader").remove();
+$("#stationlist").css("background-color", "#E5E1D1");
+$("#bikepng").animate({width: "15%"}, 800);
+$("#stationlist").append(' <%= j render partial: "stationgroup" %> ').fadeIn();

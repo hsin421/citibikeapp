@@ -1,42 +1,43 @@
 $('#stationlist').append(' <%= j render partial: "fire" %> ').hide();
-$("#stationlist").slideDown("slow");
+$("#stationlist").slideDown();
 
-
-function delete_repeat() {
-
-var stlg = $(".station").length;
-var myArray = [];
-if(stlg>0){
-for(i=stlg/2; i<stlg; i++){
-	myArray.push("#"+$(".station")[i].id)
-}}
-for(j=0; j<myArray.length; j++){
-	$(myArray[j]).remove()
-}
-};
-
+// function delete_repeat() {
+// var stlg = $(".station").length;
+// var myArray = [];
+// if(stlg>0){
+// for(i=stlg/2; i<stlg; i++){
+// 	myArray.push("#"+$(".station")[i].id)
+// }}
+// for(j=0; j<myArray.length; j++){
+// 	$(myArray[j]).remove()
+// }
+// };
+//delete_repeat();
 function clickable() {
-
 		var stlg = $(".station").length;
 		var myArray = [];
 		if(stlg>0){
 		for(i=0; i<stlg; i++){
 			myArray.push("#"+$(".station")[i].id)
-		}
+		};
 		for(j=0; j<myArray.length; j++){
 			
 			$(myArray[j]).on("click", function(){
+			$(".station").fadeOut();
+			$(".station").remove();
+			$("#stationlist").css("background-color", "black");
+			$("#stationlist").append("<img src='/crop.gif' id='loader' >");
               $.ajax({
                      type: 'POST',
        				 url: '/data',
      			     data: {station_select: $(this)[0].id},
+              });
 
-              })
 				
 			})
 		}}
 		};
 
 
-delete_repeat();
 clickable();
+

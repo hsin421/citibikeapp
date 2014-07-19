@@ -1,0 +1,77 @@
+ today = new Date();
+    h = today.getHours();
+	$(".hidden").hide()
+    $("#dock").on("click", function(){
+    	$("#bike").css("background-color","white");
+    	$("#bike").css("color","grey");
+    	$("#dock").css("background-color","grey");
+    	$("#dock").css("color","white");
+    	$(".docks").css("font-size", "25px");
+	    $(".bikes").css("font-size", "12px");
+    	for(a=7; a<13; a++){
+		
+		if(parseInt($("#hidden"+a).html())>3 & parseInt($("#hidden"+a).html())<10){
+			$("#status"+(a-6)).css("background-color","orange")
+		};
+		if(parseInt($("#hidden"+a).html())<=3){
+			$("#status"+(a-6)).css("background-color","red")
+		};
+		if(parseInt($("#hidden"+a).html())>=10){
+			$("#status"+(a-6)).css("background-color","green")};
+		};
+    	
+    });
+
+    $("#bike").on("click", function(){
+    	$("#dock").css("background-color","white");
+    	$("#dock").css("color","grey");
+    	$("#bike").css("background-color","grey");
+    	$("#bike").css("color","white");
+    	$(".bikes").css("font-size", "25px");
+    	$(".docks").css("font-size", "12px");
+    	for(a=1; a<7; a++){
+		
+		if(parseInt($("#hidden"+a).html())>3 & parseInt($("#hidden"+a).html())<10){
+			$("#status"+a).css("background-color","orange")
+		};
+		if(parseInt($("#hidden"+a).html())<=3){
+			$("#status"+a).css("background-color","red")
+		};
+		if(parseInt($("#hidden"+a).html())>=10){
+			$("#status"+a).css("background-color","green")
+		}};
+	});
+
+	
+	if(h<12){
+    	$(".bikes").css("font-size", "25px");
+    	$(".docks").css("font-size", "12px");
+
+	for(a=1; a<7; a++){
+		
+		if(parseInt($("#hidden"+a).html())>3 & parseInt($("#hidden"+a).html())<10){
+			$("#status"+a).css("background-color","orange")
+		};
+		if(parseInt($("#hidden"+a).html())<=3){
+			$("#status"+a).css("background-color","red")
+		};
+		if(parseInt($("#hidden"+a).html())>=10){
+			$("#status"+a).css("background-color","green")
+		}}}else{
+		$("#bike").css("background-color","white");
+    	$("#bike").css("color","grey");
+    	$("#dock").css("background-color","grey");
+    	$("#dock").css("color","white");
+    	$(".docks").css("font-size", "25px");
+    	$(".bikes").css("font-size", "12px");
+			for(a=7; a<13; a++){
+		
+		if(parseInt($("#hidden"+a).html())>3 & parseInt($("#hidden"+a).html())<10){
+			$("#status"+(a-6)).css("background-color","orange")
+		};
+		if(parseInt($("#hidden"+a).html())<=3){
+			$("#status"+(a-6)).css("background-color","red")
+		};
+		if(parseInt($("#hidden"+a).html())>=10){
+			$("#status"+(a-6)).css("background-color","green")
+		}}};

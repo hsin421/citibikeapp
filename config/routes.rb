@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   get 'login' => 'sessions#new'
   post 'sessions' => 'session#create'
-
-  get 'find' => 'station#new', :layout => false
-
+  get 'about' => 'station#about'
+  get 'find' => 'station#new'
+  get 'silver' => 'station#index'
   post 'find' => 'station#find'
   post 'data' => 'station#data'
   root 'station#new'

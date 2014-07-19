@@ -27,12 +27,18 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #425563;
+  color:#E5E4D7;
 }
 body {
-  color: #fff;
+  
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  font-family: 'Allerta', sans-serif;
+}
+
+input {
+  background-color: #E5E4D7;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -84,6 +90,7 @@ body {
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
   border-bottom: 2px solid transparent;
+  font-family: 'Allerta', sans-serif;
 }
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
@@ -94,8 +101,14 @@ body {
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-  color: #fff;
+  color: #E5E4D7;
   border-bottom-color: #fff;
+}
+
+#search{
+  background-color: #E5E4D7;
+  color:#253746;
+  font-family: 'Allerta', sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -109,14 +122,22 @@ body {
   #stationlist{
     margin: 10px;
     width: 90%;
-  background-color: white;
-  color:grey;
   border:2px solid;
-  border-color:white;
+  border-color:#9E9E9E;
   border-radius: 5px;
   cursor:pointer;
+  background-color: #E5E1D1;
 
 }
+.station{
+
+  border-bottom: 3px solid;
+  border-color:#253746;
+  border-radius:5px;
+  color:#253746
+}
+
+
 }
 @media (max-width: 768px){
   body{
@@ -142,7 +163,7 @@ body {
 }
 .ui-menu-item{
   list-style-type: none;
-  margin-left:100px;
+  
 
 }
 #stationlist{
@@ -150,17 +171,27 @@ body {
   font-size: 14px;
   width:50%;
   height: auto;
-  background-color: white;
-  color:grey;
+  background-color: #E5E1D1;
+  color:#253746;
   border:2px solid;
-  border-color:white;
+  border-color:#9E9E9E;
   border-radius: 5px;
 
 }
+.station{
+
+  border-bottom: 3px solid;
+  border-color:#253746;
+  border-radius:5px;
+  color:#253746
+}
+
+
 #cs1, #cs2{
 
   width:80px;
 }
+
 
 .ui-menu-item{
   list-style-type: none;
