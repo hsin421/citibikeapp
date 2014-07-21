@@ -1,4 +1,6 @@
 $("#loader").remove();
 $("#stationlist").css("background-color", "#E5E1D1");
-$("#bikepng").animate({width: "15%"}, 800);
+$("#bikepng").animate({width: "15%", right: "41%"}, 800);
+$("#dockimg").append("<img src='/dock.png' id='dockpix'>");
 $("#stationlist").append(' <%= j render partial: "stationgroup" %> ').fadeIn();
+$('html, body').animate({ scrollTop: 0 }, 'fast');

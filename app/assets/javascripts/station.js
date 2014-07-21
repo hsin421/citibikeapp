@@ -91,7 +91,7 @@ $(document).on('ready page:load', function() {
 	    $( "#cs2" ).autocomplete({
 	      source: availableTags
     	, minLength: 2});
-    	
+
           });
      
 	
@@ -107,7 +107,8 @@ $(document).on('ready page:load', function() {
 	$("#cs1, #cs2").on("focus", function(){
 		$("#cs1, #cs2").val("");
 		$(".station").remove();
-		$("#bikepng").animate({width: "57%"}, 400)
+		$("#bikepng").animate({width: "57%", right: "0"}, 400);
+		$("#dockpix").remove();
 	});
 
 	

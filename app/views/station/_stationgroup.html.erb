@@ -1,8 +1,24 @@
 <% i = 0 %>
 <% @stationgroup.each do |station| %>
 <%= content_tag_for :div, station do %>					
-		
-		<h1 ><%= @bikes[i] %>  <%= station.address %> <%= @docks[i] %> </h1>
-		<% i +=1 %>
+<% if @bikes[i] < 4 %>		
+<div class='bikes' style="background-color:#DF4949">	<%= @bikes[i] %> </div> 
+<% elsif @bikes[i] < 9 %>
+<div class='bikes' style="background-color:#E2964A">	<%= @bikes[i] %> </div> 
+<% else %>
+<div class='bikes' style="background-color:#45B29D">	<%= @bikes[i] %> </div> 
+<% end %>
+
+<div id="stname"> <%= station.address %> </div> 
+
+<% if @docks[i] < 4 %>		
+<div class='docks' style="background-color:#DF4949">	<%= @docks[i] %> </div> 
+<% elsif @docks[i] < 9 %>
+<div class='docks' style="background-color:#E2964A">	<%= @docks[i] %> </div> 
+<% else %>
+<div class='docks' style="background-color:#45B29D">	<%= @docks[i] %> </div> 
+<% end %>
+
+<% i +=1 %> 
 <% end %>
 <% end %>
