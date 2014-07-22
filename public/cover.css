@@ -39,6 +39,16 @@ body {
 
 input {
   background-color: #E5E4D7;
+  width:135px;
+}
+ul.ui-autocomplete.ui-menu{
+  list-style-type: none;
+  position: absolute;
+  text-align: center;
+  background-color: #425563;
+  height:55px;
+  border-left:1px solid #E5E4D7;
+  border-right:1px solid #E5E4D7;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -231,18 +241,8 @@ input {
 }
 
 
-}
+} 
 
-.ui-menu-item{
-  list-style-type: none;
-  margin-left:150px;
-
-}
-
-#ui-id-1, #ui-id-2{
-position:absolute;
-
-}
 
 
 
