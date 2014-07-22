@@ -27,7 +27,11 @@ class StationController < ApplicationController
     for b in dist_list_sort
         dist_list_sort_id << dist_list_id[dist_list.index(b)]
     end
-	return dist_list_sort_id[0..num]
+    if dist_list_sort_id[0]
+	  return dist_list_sort_id[0..num]
+	else
+		return dist_list_sort_id[1..num]
+	end
 	end
 
   def index
@@ -174,8 +178,11 @@ else
 	end
 end
 
-	
-	return stationlist
+	if stationlist != []
+	    return stationlist
+    else
+    	return [Station.new("address" => "No Stations available, try again")]
+    end
 end
 
 	    cs1 = params[:cs1]
@@ -186,7 +193,14 @@ end
 	    	@Stations = find_station(cs_name(cs1), nil)         
 	    
 	    elsif cs1 == "" && cs2
-             @Stations = find_station(cs_name(cs2), nil)
+	    	 int_string = "https://maps.googleapis.com/maps/api/geocode/json?address="+cs2.split(" ").join("+")+",+New+York,+NY&key=AIzaSyChKDkdoRcSL0Xh9FXVgJJyfuGS2QyMkyY"
+             intersection = open(int_string)
+             my_int = JSON.parse(intersection.read)
+             fakestation = Station.new("latidude"=> my_int["results"][0]["geometry"]["location"]["lat"], "logitude" => my_int["results"][0]["geometry"]["location"]["lng"]) 
+             int_stations = Closest(fakestation, 5)
+             int_stations.each do |id|
+             	@Stations << Station.find(id)
+             end
 	    
 	    elsif cs1 && cs2
 	    	  @Stations = find_station(cs_name(cs1), cs_name(cs2))

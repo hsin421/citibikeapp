@@ -88,9 +88,9 @@ $(document).on('ready page:load', function() {
 	    $( "#cs1" ).autocomplete({
 	      source: availableTags
     	, minLength: 2});
-	    $( "#cs2" ).autocomplete({
-	      source: availableTags
-    	, minLength: 2});
+	    // $( "#cs2" ).autocomplete({
+	    //   source: availableTags
+    	// , minLength: 2});
 
           });
      
