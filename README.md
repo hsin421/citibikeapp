@@ -8,12 +8,15 @@ Comments are welcomed. Please pardon the extremely messy and unreadable codes be
 To Fork/Clone
 
 First, turn on Postgresql
+
 bundle install
+
 rake db:create 
+
 rake db:migrate 
+
 rails c 
+
 require './dbcitibike.rb'
-
-
 
 Also, in Station_controller line 19~22. Make sure line 22 is commented, and line 19 is un-commented. This is due to my own database discrepancies with production db. 
