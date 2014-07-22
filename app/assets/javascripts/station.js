@@ -93,6 +93,16 @@ $(document).on('ready page:load', function() {
     	// , minLength: 2});
 
           });
+    $("#cs1, #cs2").on("keyup", function(e) {
+      if (e.keyCode == 13){
+      	$.ajax({
+		type: 'POST',
+		url: '/find',
+		data: {cs1: $("#cs1").val(), cs2: $("#cs2").val()},
+		});
+      }
+
+    })
      
 	
 	$("#search").on("click", function() {

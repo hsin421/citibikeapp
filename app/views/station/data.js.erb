@@ -1,6 +1,7 @@
 $("#loader").remove();
 $("#stationlist").css("background-color", "#E5E1D1");
 $("#bikepng").animate({width: "15%", right: "41%"}, 800);
+$("#dockimg").append("<a href='https://www.citibikenyc.com/stations' id='stationmap'> Station map </a>");
 $("#dockimg").append("<img src='/dock.png' id='dockpix'>");
 $("#stationlist").append(' <%= j render partial: "stationgroup" %> ').fadeIn();
 $('html, body').animate({ scrollTop: 0 }, 'fast');

@@ -27,7 +27,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #425563;
+  background-color: #384A58;
   color:#E5E4D7;
 }
 body {
@@ -46,10 +46,14 @@ ul.ui-autocomplete.ui-menu{
   list-style-type: none;
   position: absolute;
   text-align: center;
-  background-color: #425563;
+  background-color: #384A58;
   height:55px;
   border-left:1px solid #E5E4D7;
   border-right:1px solid #E5E4D7;
+  cursor: pointer;
+}
+.ui-menu-item:hover{
+  color:#CAC8B0;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -307,15 +311,29 @@ ul.ui-autocomplete.ui-menu{
   position:relative;
   width:400px;
   height:auto;
+  top:10%;
   margin-top: 15%;
 }
 #dockpix{
   width:80px;
   height:auto;
   position:relative;
-  left:35%;
-  margin-top: 15%;
+  left:85%%;
+  margin-top: 13%;
+  float:left;
+
 }
+#stationmap{
+  width:40px;
+  height:50px;
+  position:relative;
+  right:15%;
+  
+  font-size: 15px;
+  padding-top: 90%;
+
+}
+
 
 
 }
