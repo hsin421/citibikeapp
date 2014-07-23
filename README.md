@@ -20,5 +20,3 @@ rails c
 require './dbcitibike.rb'
 
 require './crossStreet.rb'
-
-Also, in Station_controller line 19~22. Make sure line 22 is commented, and line 19 is un-commented. This is due to my own database discrepancies with production db. 
