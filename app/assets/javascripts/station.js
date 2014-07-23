@@ -13,8 +13,8 @@ $(document).on('ready page:load', function() {
     	$("#bike").css("color","grey");
     	$("#dock").css("background-color","grey");
     	$("#dock").css("color","white");
-    	$(".docks").css("font-size", "25px");
-	    $(".bikes").css("font-size", "12px");
+    	$(".dockss").css("font-size", "25px");
+	    $(".bikess").css("font-size", "12px");
     	for(a=7; a<13; a++){
 		
 		if(parseInt($("#hidden"+a).html())>3 & parseInt($("#hidden"+a).html())<10){
@@ -34,8 +34,8 @@ $(document).on('ready page:load', function() {
     	$("#dock").css("color","grey");
     	$("#bike").css("background-color","grey");
     	$("#bike").css("color","white");
-    	$(".bikes").css("font-size", "25px");
-    	$(".docks").css("font-size", "12px");
+    	$(".bikess").css("font-size", "25px");
+    	$(".dockss").css("font-size", "12px");
     	for(a=1; a<7; a++){
 		
 		if(parseInt($("#hidden"+a).html())>3 & parseInt($("#hidden"+a).html())<10){
@@ -51,8 +51,8 @@ $(document).on('ready page:load', function() {
 
 	
 	if(h<12){
-    	$(".bikes").css("font-size", "25px");
-    	$(".docks").css("font-size", "12px");
+    	$(".bikess").css("font-size", "25px");
+    	$(".dockss").css("font-size", "12px");
 
 	for(a=1; a<7; a++){
 		
@@ -69,8 +69,8 @@ $(document).on('ready page:load', function() {
     	$("#bike").css("color","grey");
     	$("#dock").css("background-color","grey");
     	$("#dock").css("color","white");
-    	$(".docks").css("font-size", "25px");
-    	$(".bikes").css("font-size", "12px");
+    	$(".dockss").css("font-size", "25px");
+    	$(".bikess").css("font-size", "12px");
 			for(a=7; a<13; a++){
 		
 		if(parseInt($("#hidden"+a).html())>3 & parseInt($("#hidden"+a).html())<10){
@@ -93,8 +93,18 @@ $(document).on('ready page:load', function() {
     	// , minLength: 2});
 
           });
+    $("#dockpix").hide();
+    $("#weather").hide();
+    $("#check").hover(function(){	
+     $("#weather").slideDown("slow") },
+     function() {
+     	$("#weather").slideUp("slow") 
+     });
+
     $("#cs1, #cs2").on("keyup", function(e) {
       if (e.keyCode == 13){
+      	$(".station").fadeOut();
+		$(".station").remove();
       	$.ajax({
 		type: 'POST',
 		url: '/find',
@@ -106,6 +116,8 @@ $(document).on('ready page:load', function() {
      
 	
 	$("#search").on("click", function() {
+		$(".station").fadeOut();
+		$(".station").remove();
 		$.ajax({
 		type: 'POST',
 		url: '/find',
@@ -118,7 +130,8 @@ $(document).on('ready page:load', function() {
 		$("#cs1, #cs2").val("");
 		$(".station").remove();
 		$("#bikepng").animate({width: "57%", right: "0"}, 400);
-		$("#dockpix").remove();
+		$("#dockpix").hide();
+		$("#check").css({"float": "", "position": "", "left": "", "top": ""});
 	});
 
 	

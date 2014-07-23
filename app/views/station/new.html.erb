@@ -1,16 +1,18 @@
 
-          <div id="dockimg"><img src="/bike.png" id="bikepng">  </div>
+          <div id="dockimg"><img src="/bike.png" id="bikepng"> <img src='/dock.png' id='dockpix'> </div>
+          <div id="check"> Today: <%= @w_condition %> <%= image_tag(@icon) %></div>
+            <div id="weather"> <%= @temp %> | Wind: <%= @wind[0..23] %> </div>
            <div id="stationlist"></div>
           <div class="inner cover">
-            <h1 class="cover-heading">Pick Your Root Station</h1>
+            <h1 class="cover-heading">Pick Your Root Station</h1> 
              <div class="ui-widget">
-  		<label for="cs1">By Cross Street: </label>
+  		<label for="cs1">&nbsp; &nbsp; Cross Sreet: &nbsp; &nbsp; </label>
   		<input id="cs1" style="color:grey" placeholder="W 34 St">
 			<h4> OR </h4> 
 			</div>
 		
 			<div class="ui-widget">
-			  <label for="cs2">By Intersection: </label>
+			  <label for="cs2">Intersection/Area: </label>
 			  <input id="cs2" style="color:grey" placeholder="41 St and 11 Ave">
          
      		 <br>

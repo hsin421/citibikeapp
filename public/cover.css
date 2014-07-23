@@ -79,7 +79,14 @@ ul.ui-autocomplete.ui-menu{
 .inner {
   padding: 30px;
 }
+#weather {
+   font-size: 20px;
+  
+}
+#check{
+  cursor: pointer;
 
+}
 
 /*
  * Header
@@ -124,9 +131,12 @@ ul.ui-autocomplete.ui-menu{
   background-color: #E5E4D7;
   color:#253746;
   font-family: 'Allerta', sans-serif;
-  width:90px;
-  text-align:left;
+  width:85px;
+  height:30px;
+  text-align:center;
+  line-height: 10px;
   padding-left: 10px;
+  margin-top: 10px;
 }
 
 @media (min-width: 768px) {
