@@ -1,0 +1,233 @@
+$limecolor: #53C400;
+
+@import 'kubestyle';
+
+* {
+margin: 0;
+}
+html, body {
+height: 100%;
+}
+
+.body{
+	font-family: 'Open Sans',Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 350;
+	background: url(citibikebridge.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+   @media (max-width: 760px){
+		background-position: -90px 0px;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+}
+
+
+.masthead {
+	height: 50px;
+	// padding: 10px;
+	margin-left: 0px;
+	padding-left: 10px;
+	background-color: white;
+	/*border-bottom: 1px solid black;*/
+	.masthead-brand {
+		float: left;
+		font-family: 'Amatic SC', Arial, sans-serif;
+		font-size: 32px;
+		text-transform: uppercase;
+		font-weight: bold;
+		float: left;
+		letter-spacing: 1px;
+		color: $limecolor;
+		position: relative;
+	   top: 50%;
+	   transform: translateY(-50%);
+
+
+	}
+   @media (max-width: 800px){
+		height: 80px;
+   }
+}
+
+.masthead-nav {
+	position: relative;
+   top: 50%;
+   transform: translateY(-50%);
+	text-align: right;
+	li {
+		display: inline-block;
+		margin-right: 20px;
+		font-weight: bold;
+		a:hover {
+			text-decoration: none;
+			color: $limecolor;
+			border-bottom: 2px solid $limecolor;
+		}
+
+	   @media (max-width: 650px){
+			display: block;
+			line-height: 140%;
+	   }
+	}
+
+}
+
+a {
+	color: #53C400;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -6em;
+}
+.footer, .push {
+	height: 3.2em;
+	clear: both;
+	@media (max-width: 600px){
+		height: 4.2em;
+	}
+}
+
+.footer {
+	background-color: white;
+	color: black;
+	font-size: 14px;
+	font-style: italic;
+	padding: 0 10px 0 10px;
+	line-height: 18px;
+	border-top: 1px solid black;
+	.inner {
+		position: relative;
+	   top: 50%;
+	   transform: translateY(-50%);
+	}
+
+}
+
+#stationSearchWrap {
+	position: relative;
+	left: 60%;
+	height: 400px;
+	width: 300px;
+	background-color: rgba(255,255,255,.8);
+	border-radius: 15px;
+	// padding: 10px;
+	overflow:hidden;
+	text-align: center;
+	border: 1px solid $limecolor;
+	#searchHeader {
+		font-weight: bold;
+		font-size: 18px;
+		padding: 7px;
+		text-transform: uppercase;
+		background-color: $limecolor;
+		color: white;
+		// border-bottom: 2px solid $limecolor;
+	}
+
+	#instruction {
+		padding: 10px;
+		text-align: justify;
+	}
+
+	#cs1, #cs2{
+		padding: 3px 5px 3px 5px;
+		border: 1px solid $limecolor;
+		&:focus {
+			outline: none;
+			box-shadow: 0 0 3px $limecolor;
+		}
+	}
+	#cs1 {
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+	}
+	#cs2 {
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+	}
+	label {
+		color: white;
+		font-size: 14px;
+
+	}
+	#cs1_label {
+		background-color: $limecolor;
+		width: 183px;
+		margin: 0 auto;
+		border-bottom-left-radius: 4px;
+		border-bottom-right-radius: 4px;
+		padding-bottom: 3px;
+	}
+	#cs2_label {
+		background-color: $limecolor;
+		width: 183px;
+		margin: 0 auto;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		padding-bottom:2px;
+	}
+
+	#or {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	#search {
+		background-color: $limecolor;
+		width: 70px;
+		height: 20px;
+		color: white;
+		letter-spacing: 1px;
+		border-radius: 10px;
+		padding-top: 4px;
+		margin: 0 auto;
+		margin-top: 20px;
+		cursor:pointer;
+		text-transform: uppercase;
+		font-size: 12px;
+		&:hover{
+			// background-color: rgba(83,196,0, .6);
+			background-color: black;
+			color: white;
+		}
+	}
+
+	@media (max-width: 500px) {
+		left: 10%;
+		background-color: rgba(255,255,255,.9);
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+}
+
+#about_section {
+	background-color: rgba(250,250,250, .9);
+	width: 75%;
+	margin: 20px auto;
+	padding: 15px;
+	border-radius: 10px;
+	line-height: 120%;
+	p {
+		margin-bottom: 10px;
+	}
+	@media (max-width: 600px) {
+		width: 90%;
+	}
+}
+
+
