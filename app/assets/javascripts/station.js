@@ -100,8 +100,19 @@ $(document).on('ready page:load', function() {
     	// , minLength: 2});
 
           });
+
+    $("#dockpix").hide();
+    $("#weather").hide();
+    $("#check").hover(function(){	
+     $("#weather").slideDown("slow") },
+     function() {
+     	$("#weather").slideUp("slow") 
+     });
+
     $("#cs1, #cs2").on("keyup", function(e) {
       if (e.keyCode == 13){
+		$(".station").fadeOut();
+				$(".station").remove();
       	$.ajax({
 		type: 'POST',
 		url: '/find',
@@ -113,6 +124,8 @@ $(document).on('ready page:load', function() {
      
 	
 	$("#search").on("click", function() {
+		$(".station").fadeOut();
+		$(".station").remove();
 		$.ajax({
 		type: 'POST',
 		url: '/find',
@@ -125,7 +138,8 @@ $(document).on('ready page:load', function() {
 		$("#cs1, #cs2").val("");
 		$(".station").remove();
 		$("#bikepng").animate({width: "57%", right: "0"}, 400);
-		$("#dockpix").remove();
+		$("#dockpix").hide();
+		$("#check").css({"float": "", "position": "", "left": "", "top": ""});
 	});
 
 	

@@ -1,4 +1,9 @@
-
+<div class="units-row units-split">
+  <div id="weather_wrapper" class="unit-100">
+    <div id="check"> Today is <%= @w_condition %></div><div><%= image_tag(@icon, class: "weather_icon") %></div>
+    <div id="weather"> <%= @temp %> | Wind: <%= @wind[0..23] %> </div>
+  </div>
+</div>
 <div id="stationSearchWrap">
   <header id="searchHeader">Pick Your Root Station</header>
     <p id="instruction">To check how many bikes or docks are available, first enter the citibike station you are interested in.</p>

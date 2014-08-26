@@ -122,7 +122,12 @@ def data
 end	
 
 def new
-
+	weather = open('http://api.wunderground.com/api/636181e2c7ad2c65/conditions/q/NY/New_York.json')
+			my_weather = JSON.parse(weather.read)
+			@icon = my_weather["current_observation"]["icon_url"]
+			@w_condition = my_weather["current_observation"]["weather"]
+			@temp = my_weather["current_observation"]["temperature_string"]
+			@wind = my_weather["current_observation"]["wind_string"]
 	puts "********{ #{request.remote_ip}}***********"
     
 end
@@ -181,7 +186,7 @@ end
 	if stationlist != []
 	    return stationlist
     else
-    	return [Station.new("address" => "No Stations available, try again")]
+    	return [Station.new("address" => "No results, please choose a station from the suggested list.")]
     end
 end
 
