@@ -1,8 +1,16 @@
 $("#loader").remove();
 $("#stationlist").css("background-color", "#E5E1D1");
-$("#check").css({"float": "left", "position": "absolute", "left": "40%", "top": "20%"})
+$("#check").css({"float": "left", "position": "absolute", "left": "40%", "top": "15%", "marginLeft":"0"})
 $("#bikepng").animate({width: "15%", right: "48%"}, 800);
 // $("#dockimg").append("<a href='https://www.citibikenyc.com/stations' id='stationmap'> Station map </a>");
 $("#dockpix").show();
 $("#stationlist").append(' <%= j render partial: "stationgroup" %> ').fadeIn();
 $('html, body').animate({ scrollTop: 0 }, 'fast');
+$( ".stname" ).click(function() {
+            $( "#chart_div" ).show();
+            $("#chart_div").css("zIndex","0")
+            $(".stname").replaceWith($("#chart_div")) });
+// $( "#chart_div" ).click(function() {
+//             $( ".stname" ).show();
+//             $("#chart_div").hide()    });
+

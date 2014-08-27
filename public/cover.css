@@ -85,8 +85,36 @@ ul.ui-autocomplete.ui-menu{
 }
 #check{
   cursor: pointer;
+  width:190px;
+  margin-left: 35%;
 
 }
+
+@-webkit-keyframes warning {
+    0% {
+        background-color: #FFD560;
+        
+    }
+    22% {
+        background-color: #E29C48;
+    }
+    50%{
+        background-color: #E27A3F;
+    }
+    77% {
+        background-color: #DF573B;
+    }
+    100% {
+        background-color: #DF4949;
+    }
+}
+
+.warning {
+    -webkit-animation-name: warning;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+}    
 
 /*
  * Header
@@ -96,6 +124,17 @@ ul.ui-autocomplete.ui-menu{
   margin-bottom: 10px;
   font-family: 'Indie Flower', cursive;
   font-size: 38px;
+
+}
+.masthead-brand > a,
+.masthead-brand > a:hover,
+.masthead-brand > a:visited,
+.masthead-brand > a:focus{
+  color:#E5E4D7;
+  background-color: transparent;
+  text-decoration: none;
+
+
 }
 
 .masthead-nav > li {
@@ -138,6 +177,7 @@ ul.ui-autocomplete.ui-menu{
   padding-left: 10px;
   margin-top: 10px;
 }
+
 
 @media (min-width: 768px) {
   .masthead-brand {
@@ -192,7 +232,7 @@ ul.ui-autocomplete.ui-menu{
   border-bottom-right-radius:10%;
   top:0;
 }
-#stname{
+.stname{
   font-size: 32px;
   font-weight: bold;
 }
@@ -343,8 +383,6 @@ ul.ui-autocomplete.ui-menu{
   padding-top: 90%;
 
 }
-
-
 
 }
 

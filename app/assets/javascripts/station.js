@@ -133,7 +133,7 @@ $(document).on('ready page:load', function() {
 		$("#dockpix").hide();
 		$("#check").css({"float": "", "position": "", "left": "", "top": ""});
 	});
-
+    $("#chart_div").css("zIndex","-1");
 	
 
   

@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'json'
+require Rails.root.join("public","data.rb")
 
 class StationController < ApplicationController
  #Note spelling mistake: latidude & logitude 
@@ -18,9 +19,9 @@ class StationController < ApplicationController
 	dist_list_sort_id = []
 	#production
 	#for all clones please use line 21 instead of line 23
-	for a in (1..332)
+	#for a in (1..332)
 	#development
-	#for a in (4..335)	
+	for a in (4..335)	
 		dist_list << Station_dist(station, Station.find(a))
 		dist_list_id << a
 	end
@@ -89,11 +90,16 @@ class StationController < ApplicationController
 		@next = ((Time.parse(b[0]) - Time.now)/60).ceil
 		@timep = Time.parse(b[0])
 		@timenext = Time.parse(b[1])
-		@timenn = Time.parse(b[2])
+	
 		@now = Time.now
+
+      
+        
+
 	end
 
 def about
+	@page = 2
 
 end
 
@@ -101,28 +107,33 @@ def data
     @station_select = Station.find(params[:station_select].split("_")[1])
 	
 	@stationgroup = []
-	c = Closest(@station_select, 6)
+	cl = Closest(@station_select, 6)
 	@bikes = []
 	@docks = []
 	
 		
 	bikes = open('http://www.citibikenyc.com/stations/json')
 	my_bike = JSON.parse(bikes.read)
-	@time = my_bike["executionTime"]
-	@exeT = Time.now
+	@time = Time.now
+	
 	
     
-	for a in c
+	for a in cl
 		@stationgroup << Station.find(a)
 		@bikes << my_bike["stationBeanList"][Station.find(a).position]["availableBikes"]
 		@docks << my_bike["stationBeanList"][Station.find(a).position]["availableDocks"]
 	end
 
-	puts "**********{#{@bikes}, #{@docks}}*************"
+	masterArray = cbdata(Rails.root.join("public","Citybike2014-07-24.csv"))
+    @warn = masterArray[3]
+
+
+	puts "**********{#{@bikes}, #{@docks}, #{@time}, #{@station_select.id}, #{@warn[254][0][1]}}*************"
 
 end	
 
 def new
+	@page = 1
 	weather = open('http://api.wunderground.com/api/636181e2c7ad2c65/conditions/q/NY/New_York.json')
 		my_weather = JSON.parse(weather.read)
 		@icon = my_weather["current_observation"]["icon_url"]
@@ -135,7 +146,7 @@ def new
 end
 
 def find   
-
+      @page = 1
 
     	def cs_name(string)
             csn = [];
@@ -150,47 +161,47 @@ def find
         end
 
  def find_station(array1, array2)
- stationlist = [];
- if !array2
-	if Station.where("cross_st1" => array1[0])
-		for a in Station.where("cross_st1" => array1[0])
-			stationlist << a
+ 	stationlist = [];
+	 if !array2
+		if Station.where("cross_st1" => array1[0])
+			for a in Station.where("cross_st1" => array1[0])
+				stationlist << a
+			end
+		end
+		if Station.where("cross_st1" => array1[1])
+			for a in Station.where("cross_st1" => array1[1])
+				stationlist << a
+			end
+		end
+		if Station.where("cross_st2" => array1[0])
+			for a in Station.where("cross_st2" => array1[0])
+				stationlist << a
+			end
+		end
+		if Station.where("cross_st2" => array1[1])
+			for a in Station.where("cross_st2" => array1[1])
+				stationlist << a
+			end
+		end
+	else
+		if Station.where("cross_st1" => array1[1], "cross_st2" => array2[0])
+			for a in Station.where("cross_st1" => array1[1], "cross_st2" => array2[0])
+				stationlist << a
+			end
+	    end
+		if Station.where("cross_st1" => array2[1], "cross_st2" => array1[0])
+			for a in Station.where("cross_st1" => array2[1], "cross_st2" => array1[0])
+				stationlist << a
+			end
 		end
 	end
-	if Station.where("cross_st1" => array1[1])
-		for a in Station.where("cross_st1" => array1[1])
-			stationlist << a
-		end
-	end
-	if Station.where("cross_st2" => array1[0])
-		for a in Station.where("cross_st2" => array1[0])
-			stationlist << a
-		end
-	end
-	if Station.where("cross_st2" => array1[1])
-		for a in Station.where("cross_st2" => array1[1])
-			stationlist << a
-		end
-	end
-else
-	if Station.where("cross_st1" => array1[1], "cross_st2" => array2[0])
-		for a in Station.where("cross_st1" => array1[1], "cross_st2" => array2[0])
-			stationlist << a
-		end
-	end
-	if Station.where("cross_st1" => array2[1], "cross_st2" => array1[0])
-		for a in Station.where("cross_st1" => array2[1], "cross_st2" => array1[0])
-			stationlist << a
-		end
-	end
-end
 
 	if stationlist != []
-	    return stationlist
-    else
-    	return [Station.new("address" => "No results, please choose from suggestions ")]
-    end
-end
+		    return stationlist
+	    else
+	    	return [Station.new("address" => "No results, please choose from suggestions ")]
+	    end
+	end
 
 	    cs1 = params[:cs1]
 	    cs2 = params[:cs2]
