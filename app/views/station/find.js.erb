@@ -25,8 +25,8 @@ function clickable() {
 			$(myArray[j]).on("click", function(){
 			$(".station").fadeOut();
 			$(".station").remove();
-			$("#stationlist").css("background-color", "black");
-			$("#stationlist").append("<img src='/crop.gif' id='loader' >");
+			// $("#stationlist").css("background-color", "transparent");
+			$("#stationlist").append("<img src='/ajax-loader.gif' id='loader' >");
               $.ajax({
                      type: 'POST',
        				 url: '/data',

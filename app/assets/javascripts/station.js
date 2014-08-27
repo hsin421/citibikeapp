@@ -101,13 +101,14 @@ $(document).on('ready page:load', function() {
 
           });
 
-    $("#dockpix").hide();
-    $("#weather").hide();
-    $("#check").hover(function(){	
-     $("#weather").slideDown("slow") },
-     function() {
-     	$("#weather").slideUp("slow") 
-     });
+// function that toggles 
+    // $("#dockpix").hide();
+    // $("#weather").hide();
+    // $("#check").hover(function(){	
+    //  $("#weather").slideDown("slow") },
+    //  function() {
+    //  	$("#weather").slideUp("slow") 
+    //  });
 
     $("#cs1, #cs2").on("keyup", function(e) {
       if (e.keyCode == 13){
