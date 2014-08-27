@@ -1,40 +1,38 @@
 
-<% i = 0 %>
-<% @stationgroup.each do |station| %>
-<%= content_tag_for :div, station do %>		
 
-<% if warning?(station, @time, @warn, 1) && !weekend?(@time) %>
-  	<div class='bikes warning'  >	<%= @bikes[i] %> </div>
-<% else %>
+<div id="stationlist_header">
+	<div id="bike_header">Bikes</div>
+	<div id="dock_header">Docks</div>
+</div>
 
-	<% if @bikes[i] < 4 %>			
-		<div class='bikes' style="background-color:#DF4949" >	<%= @bikes[i] %> </div> 
-	<% elsif @bikes[i] < 9 %>
-		<div class='bikes' style="background-color:#E2964A" >	<%= @bikes[i] %> </div> 
-	<% else %>
-		<div class='bikes' style="background-color:#45B29D" >	<%= @bikes[i] %> </div> 
+<div id="after_search_list">
+
+	<% i = 0 %>
+	<% @stationgroup.each do |station| %>
+		<%= content_tag_for :div, station do %>				
+			<% if @bikes[i] < 4 %>
+				<!-- display low qty alert (color red) -->
+				<div class='bikes white-text' style="background-color:#DF4949">	<%= @bikes[i] %> </div> 
+			<% elsif @bikes[i] < 9 %>
+				<!-- display moderate qty alert (color yellow) -->
+				<div class='bikes' style="background-color:#F5FF87">	<%= @bikes[i] %> </div> 
+			<% else %>
+				<!-- display high qty alert (color green) -->
+				<div class='bikes white-text' style="background-color:#53C400">	<%= @bikes[i] %> </div> 
+			<% end %>
+
+			<div id="stname"> <%= station.address %> </div> 
+
+			<% if @docks[i] < 4 %>		
+				<div class='docks white-text' style="background-color:#DF4949">	<%= @docks[i] %> </div> 
+			<% elsif @docks[i] < 9 %>
+				<div class='docks' style="background-color:#F5FF87">	<%= @docks[i] %> </div> 
+			<% else %>
+				<div class='docks white-text' style="background-color:#53C400">	<%= @docks[i] %> </div> 
+			<% end %>
+
+			<% i +=1 %> 
+		<% end %>
 	<% end %>
+</div>
 
-<% end %>
-
-<div class="stname"> <%= station.address %> </div> 
-
-
-<% if warning?(station, @time, @warn, 0) && !weekend?(@time) %>
-  	<div class='docks warning'  >	<%= @docks[i] %> </div>
-<% else %>
-
-	<% if @docks[i] < 4 %>			
-		<div class='docks' style="background-color:#DF4949" >	<%= @docks[i] %> </div> 
-	<% elsif @docks[i] < 9 %>
-		<div class='docks' style="background-color:#E2964A" >	<%= @docks[i] %> </div> 
-	<% else %>
-		<div class='docks' style="background-color:#45B29D" >	<%= @docks[i] %> </div> 
-	<% end %>
-
-<% end %>
-
-
-<% i +=1 %> 
-<% end %>
-<% end %>

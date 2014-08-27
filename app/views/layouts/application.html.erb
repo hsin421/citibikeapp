@@ -53,27 +53,37 @@
     <meta name="author" content="">
     
 
-    <title>Bike It!</title>
+    <title>myCitiBike</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Custom styles for this template -->
-    <link href="/cover.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Allerta' rel='stylesheet' type='text/css'>
-   
+    <!-- <link href="/cover.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'> -->
+    <!-- <link href='http://fonts.googleapis.com/css?family=Allerta' rel='stylesheet' type='text/css'> -->
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400|Amatic+SC:400,700' rel='stylesheet' type='text/css'>
   </head>
 
-  <body>
+  <body class="body">
+    <!-- <div class="container-fluid"> -->
+    <div class="wrapper">
 
-    <div class="site-wrapper">
 
-      <div class="site-wrapper-inner">
+      <div class="units-row units-split masthead units-mobile-50">
+        <div class="masthead-brand unit-20">Citi Bike Wizard</div>
+        <ul class="masthead-nav unit-80">
+          <li><a href="/find">Home</a></li>
+          <li><a href="/about"> About </a></li>
+          <li><a href="#">Saved Locations</a></li>
+          
+        </ul>
+      </div>
 
-        <div class="cover-container">
 
-          <div class="masthead clearfix">
+          <!-- <div class="masthead clearfix">
             <div class="inner">
               <h3 class="masthead-brand"><a href="/" >Citi Bike Wizard </a></h3>
               <ul class="nav masthead-nav">
@@ -93,26 +103,23 @@
                 
               </ul>
             </div>
-          </div>
+          </div> -->
+
 
 <%= yield %>
 
-
- <div class="mastfoot">
+<div class="push"></div>
+</div>
+ <div class="footer">
             <div class="inner">
-              <p>Station data provided by <a href="http://citibikenyc.com">Citibike</a>, site by <a href="https://github.com/hsin421/citibikeapp">@hsin421</a>. Citi bike is a registered service mark of Citi group. Please contact the site owner regarding any rights infrigements.</p>
+              <p>Station data provided by <a href="http://citibikenyc.com">Citibike</a>, site by <a href="https://hsin.cool">Hsin</a> & <a href="http://melissavlin.com">Melissa </a>. Citi bike is a registered service mark of Citi group. </p>
             </div>
           </div>
 
- </div>
-
-      </div>
-
-    </div>
-
-   
+       <!-- </div> -->
 
 
+  
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

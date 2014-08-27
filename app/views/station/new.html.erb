@@ -1,5 +1,15 @@
+<div class="units-row units-split">
+  <div id="weather_wrapper" class="unit-100">
+    <div id="check"> Today is <%= @w_condition %></div><div><%= image_tag(@icon, class: "weather_icon") %></div>
+    <div id="weather"> <%= @temp %> | Wind: <%= @wind[0..23] %> </div>
+  </div>
+</div>
+<div id="stationSearchWrap">
+  <header id="searchHeader">Pick Your Root Station</header>
+<!--     <p id="instruction">To check how many bikes or docks are available, first enter the citibike station you are interested in.</p> -->
+    <p id="instruction">Does the citibike station I am thinking of have enough bikes or ports? To check, first enter the location of the citibike station.</p>
 
-          <div id="dockimg"><img src="/bike.png" id="bikepng"> <img src='/dock.png' id='dockpix'> </div>
+         <!--  <div id="dockimg"><img src="/bike.png" id="bikepng"> <img src='/dock.png' id='dockpix'> </div>
           <div id="check"> Today: <%= @w_condition %> <%= image_tag(@icon) %></div>
             <div id="weather"> <%= @temp %> | Wind: <%= @wind[0..23] %> </div>
            <div id="stationlist"></div>
@@ -17,13 +27,35 @@
          
      		 <br>
           
-              <div class="btn btn-lg btn-default" id="search">Search</div>
+              <div class="btn btn-lg btn-default" id="search">Search</div> -->
              
-            
-          
 
-         
+    <div id="stationlist"></div>
 
+      <div id="stationSearch">
+
+        <div class="ui-widget"> <br/>
+
+      		<input id="cs1" style="color:grey" placeholder="W 34 St"><br/>
+          <div id="cs1_label"><label for="cs1">by cross street</label> </div>
+        </div>
+    			<div id="or"> or </div> 
+
+  			<div class="ui-widget">
+    			  <div id="cs2_label"><label for="cs2">by intersection</label></div>
+    			  <input id="cs2" style="color:grey" placeholder="41 St and 11 Ave"><br/>
+        </div>
+
+        <div id="search">Search</div>
+
+      </div>
+      
+</div>
+<div class="push"></div>
+</div>
+
+
+<!-- </div> -->
        
 
 

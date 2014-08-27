@@ -18,10 +18,14 @@ class StationController < ApplicationController
 	dist_list_id = []
 	dist_list_sort_id = []
 	#production
+
 	#for all clones please use line 21 instead of line 23
 	#for a in (1..332)
+
+	for a in (1..332)
+
 	#development
-	for a in (4..335)	
+	#for a in (4..335)	
 		dist_list << Station_dist(station, Station.find(a))
 		dist_list_id << a
 	end
@@ -133,13 +137,22 @@ def data
 end	
 
 def new
-	@page = 1
+
+	# @page = 1
+	# weather = open('http://api.wunderground.com/api/636181e2c7ad2c65/conditions/q/NY/New_York.json')
+	# 	my_weather = JSON.parse(weather.read)
+	# 	@icon = my_weather["current_observation"]["icon_url"]
+	# 	@w_condition = my_weather["current_observation"]["weather"]
+	# 	@temp = my_weather["current_observation"]["temperature_string"]
+	# 	@wind = my_weather["current_observation"]["wind_string"]
+
+
 	weather = open('http://api.wunderground.com/api/636181e2c7ad2c65/conditions/q/NY/New_York.json')
-		my_weather = JSON.parse(weather.read)
-		@icon = my_weather["current_observation"]["icon_url"]
-		@w_condition = my_weather["current_observation"]["weather"]
-		@temp = my_weather["current_observation"]["temperature_string"]
-		@wind = my_weather["current_observation"]["wind_string"]
+			my_weather = JSON.parse(weather.read)
+			@icon = my_weather["current_observation"]["icon_url"]
+			@w_condition = my_weather["current_observation"]["weather"]
+			@temp = my_weather["current_observation"]["temperature_string"]
+			@wind = my_weather["current_observation"]["wind_string"]
 
 	puts "********{ #{request.remote_ip}}***********"
     
@@ -197,11 +210,13 @@ def find
 	end
 
 	if stationlist != []
-		    return stationlist
-	    else
-	    	return [Station.new("address" => "No results, please choose from suggestions ")]
-	    end
-	end
+
+	    return stationlist
+    else
+    	return [Station.new("address" => "No results, please choose a station from the suggested list.")]
+    end
+end
+
 
 	    cs1 = params[:cs1]
 	    cs2 = params[:cs2]
