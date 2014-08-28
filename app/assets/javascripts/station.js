@@ -152,10 +152,11 @@ $(document).on('ready page:load', function() {
 	$("#cs1, #cs2").on("focus", function(){
 		$("#cs1, #cs2").val("");
 		$(".station").remove();
+
 		$("#stationlist_header").remove();
-		$("#bikepng").animate({width: "57%", right: "0"}, 400);
-		$("#dockpix").hide();
-		$("#check").css({"float": "", "position": "", "left": "", "top": ""});
+		
+		$("#check").css({"float": ""});
+
 	});
     
 	
