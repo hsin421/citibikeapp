@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+ body #jpreLoader {
+  left: 0 !important;
+  width: 100%;
+  height: 1px;
+}
+body #jprePercentage {
+  height: auto;
+  top: -80px;
+  font-size: 48px;
+  font-weight: normal;
+  font-family: "Dosis", sans-serif;
+  text-shadow: none;
+  color: #777777;
+}
+body #jpreOverlay {
+  background-color: #fafafa;
+}
+body #jpreBar {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-image: none;
+  background-color: #777777;
+}
