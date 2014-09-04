@@ -38,7 +38,6 @@ $(document).on('ready page:load', function() {
 		if(mobileMenu.hasClick ==false){
 			$("#mobile-nav").show();
 				mobileMenu.hasClick = true;
-
 		} else {
 			$("#mobile-nav").hide();
 				mobileMenu.hasClick = false;

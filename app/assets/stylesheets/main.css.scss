@@ -453,3 +453,58 @@ a {
 }
 
 
+// SILVER TOWERS MODE STYLING
+
+#silver_stations {
+	margin-top: 20px;
+	height: 160px;
+	margin-bottom: 20px;
+	#silver_station_header{
+		line-height: 150%;
+		background-color: $limecolor;
+		color: white;
+		font-weight: bold;
+		clear: both;
+		#silver_location_header, #silver_bike_header, #silver_dock_header{
+			float: left;
+			background-color: $limecolor;
+		}
+	}
+	.silver_station_wrapper{
+		clear: both;
+		line-height: 150%;
+		border-bottom: 1px dashed #bbb;
+
+	}	
+			.silver_station_location,#silver_location_header {
+			float: left;
+			width: 50%;	
+		}
+		.silver_bike, #silver_bike_header, .silver_dock, #silver_dock_header  {
+			float: left;
+			width: 25%;
+		}
+
+}
+#silver_bus {
+	margin-top: 20px;
+	clear: both;
+	line-height: 140%;
+	
+	#next_bus {
+		margin-top: 10px;
+	}
+	#next_bus_time {
+		font-size: 30px;
+		line-height: 140%;
+		background-color: $limecolor;
+		color: white;
+		font-weight: bold;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		margin: 0 auto;
+	}
+}
+
+
