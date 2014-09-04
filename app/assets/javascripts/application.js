@@ -27,6 +27,22 @@ $(document).on('ready page:load', function() {
 // 	    });
 		
 // 	});
+	function hasClick(objId){
+		this.objId = objId
+		this.hasClick = false;	
+	}
 
+	var mobileMenu = new hasClick("#mobile-nav");
+
+	$("#menu-icon").click(function(){
+		if(mobileMenu.hasClick ==false){
+			$("#mobile-nav").show();
+				mobileMenu.hasClick = true;
+
+		} else {
+			$("#mobile-nav").hide();
+				mobileMenu.hasClick = false;
+		}
+	});
 
 })
