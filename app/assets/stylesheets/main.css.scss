@@ -18,7 +18,7 @@ height: 100%;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-   @media (max-width: 760px){
+   @media (max-width: 450px){
 		background-position: -90px 0px;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
@@ -34,10 +34,13 @@ height: 100%;
 	margin-left: 0px;
 	padding-left: 10px;
 	background-color: white;
+
 	/*border-bottom: 1px solid black;*/
 	.masthead-brand {
 		float: left;
 		font-family: 'Amatic SC', Arial, sans-serif;
+		margin-bottom: 0;
+		height: 32px;
 		font-size: 32px;
 		text-transform: uppercase;
 		font-weight: bold;
@@ -47,15 +50,71 @@ height: 100%;
 		position: relative;
 	   top: 50%;
 	   transform: translateY(-50%);
-
+		@media (max-width: 400px){
+			font-size: 24px;
+		}
 
 	}
-   @media (max-width: 800px){
-		height: 80px;
-   }
+  //  @media (max-width: 800px){
+		// height: 80px;
+		// 	display: block;
+  //  }
+}
+
+
+#ddmenu {
+	@media (min-width: 651px){
+		display: none;
+	}
+	@media (max-width: 650px){
+		display: block;
+	}
+#menu-icon{
+	display: none;
+	@media (max-width: 650px) {
+		width: 40px;
+		height: 40px;
+		color: $limecolor;
+		display: block;
+		cursor: pointer;
+		-moz-user-select:none;		
+      -webkit-user-select: none;
+      margin-left: auto;
+      margin-right: 30px;
+      position: relative;
+      font-size: 45px;
+	}
+}
+}
+
+
+#mobile-nav {
+	display: none;
+	text-align: right;
+	background-color: white;
+	margin-left: -10px;
+	// padding-right: 40px;
+	float: left;
+	width: 102.5%;
+	line-height: 140%;
+	padding: 10px 30px 10px 0;
+	@media (min-width: 651px){
+		display: none;
+	}
+	li {
+		font-weight: bold;
+		a:hover {
+			text-decoration: none;
+			color: $limecolor;
+			border-bottom: 2px solid $limecolor;
+		}
+	}
 }
 
 .masthead-nav {
+	@media (min-width: 651px){
+		display: block;
+	}
 	position: relative;
    top: 50%;
    transform: translateY(-50%);
@@ -69,13 +128,23 @@ height: 100%;
 			color: $limecolor;
 			border-bottom: 2px solid $limecolor;
 		}
-
 	   @media (max-width: 650px){
 			display: block;
 			line-height: 140%;
+			width: 100%;
+			background-color: white;
+			top: 40px;
+			padding-right: 40px;
 	   }
 	}
-
+	@media (max-width: 650px){
+		display: none;
+		background-color: white;
+		top: 40px;
+		right: 25px;
+		padding-bottom: 5px;
+		// background-color: white;
+	}
 }
 
 a {
@@ -96,11 +165,7 @@ a {
 }
 .footer, .push {
 	height: 3.4em;
-
 	clear: both;
-	@media (max-width: 600px){
-		height: 4.2em;
-	}
 }
 
 .footer {
@@ -230,8 +295,12 @@ a {
 			color: white;
 		}
 	}
-	@media (max-width: 500px) {
-		left: 10%;
+	@media (max-width: 800px){
+		left: 40%;
+	}
+	@media (max-width: 550px) {
+		position: static;
+		margin: 0 auto;
 		background-color: rgba(255,255,255,.9);
 		// margin-top: 50px;
 		margin-bottom: 30px;
@@ -348,6 +417,9 @@ a {
 	@media (max-width: 780px){
 		height: 70px;
 	}
+	@media (max-width: 650px){
+		display: none;
+	}
 	#check {
 		float: left;
 		position: relative;
@@ -355,7 +427,7 @@ a {
 	   transform: translateY(-50%);
    	@media (max-width: 780px){
    		top: 0;
-		   transform: translateY(0);
+		   transform: translateY(8px);
 		}
 	}
 	.weather_icon {
@@ -366,7 +438,7 @@ a {
 	   float: left;
    	@media (max-width: 780px){
    		float: none;
-		   transform: translateY(-30%);
+		   transform: translateY(-5%);
 		}
 	}
 	#weather {
@@ -375,8 +447,63 @@ a {
 	   transform: translateY(-50%);
    	@media (max-width: 780px){
    		top: 0;
-		   transform: translateY(-50%);
+		   transform: translateY(0%);
 		}
+	}
+}
+
+
+// SILVER TOWERS MODE STYLING
+
+#silver_stations {
+	margin-top: 20px;
+	height: 160px;
+	margin-bottom: 20px;
+	#silver_station_header{
+		line-height: 150%;
+		background-color: $limecolor;
+		color: white;
+		font-weight: bold;
+		clear: both;
+		#silver_location_header, #silver_bike_header, #silver_dock_header{
+			float: left;
+			background-color: $limecolor;
+		}
+	}
+	.silver_station_wrapper{
+		clear: both;
+		line-height: 150%;
+		border-bottom: 1px dashed #bbb;
+
+	}	
+			.silver_station_location,#silver_location_header {
+			float: left;
+			width: 50%;	
+		}
+		.silver_bike, #silver_bike_header, .silver_dock, #silver_dock_header  {
+			float: left;
+			width: 25%;
+		}
+
+}
+#silver_bus {
+	margin-top: 20px;
+	clear: both;
+	line-height: 140%;
+	
+	#next_bus {
+		margin-top: 10px;
+	}
+	#next_bus_time {
+		font-size: 30px;
+		line-height: 140%;
+		background-color: $limecolor;
+		color: white;
+		font-weight: bold;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+		margin: 0 auto;
 	}
 }
 
