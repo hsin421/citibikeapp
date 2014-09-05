@@ -11,7 +11,7 @@
      
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="">
     <meta name="author" content="">
     
@@ -37,12 +37,21 @@
 
       <div class="units-row units-split masthead units-mobile-50">
         <div class="masthead-brand unit-20">Citi Bike Wizard</div>
-        <ul class="masthead-nav unit-80">
-          <li><a href="/find">Home</a></li>
-          <li><a href="/about"> About </a></li>
-          <li><a href="#">Saved Locations</a></li>
-          
-        </ul>
+          <!-- <div id="menu-icon"></div> -->
+          <ul class="masthead-nav unit-80">
+            <li><a href="/find">Home</a></li>
+            <li><a href="/about"> About </a></li>
+            <li><a href="#">Saved Locations</a></li>
+          </ul>
+
+          <div id="ddmenu">
+            <div id="menu-icon">&#9776;</div>
+            <ul id="mobile-nav">
+              <li><a href="/find">Home</a></li>
+              <li><a href="/about"> About </a></li>
+              <li><a href="#">Saved Locations</a></li>
+            </ul>
+          </div>
       </div>
 
 
@@ -50,19 +59,19 @@
             <div class="inner">
               <h3 class="masthead-brand"><a href="/" >Citi Bike Wizard </a></h3>
               <ul class="nav masthead-nav">
-              <% if @page == 1 %>
+              <%# if @page == 1 %>
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="/about"> About </a></li>
                 <li><a href="#">Saved Locations</a></li>
-                <% elsif @page == 2 %>
+                <%# elsif @page == 2 %>
                 <li><a href="/">Home</a></li>
                 <li class="active"><a href="/about"> About </a></li>
                 <li><a href="#">Saved Locations</a></li>
-                 <% else %>
+                 <%# else %>
                  <li><a href="/">Home</a></li>
                 <li><a href="/about"> About </a></li>
                 <li><a href="#">Saved Locations</a></li>
-                 <% end %>  
+                 <%# end %>  
                 
               </ul>
             </div>
@@ -75,7 +84,7 @@
 </div>
  <div class="footer">
             <div class="inner">
-              <p>Station data provided by <a href="http://citibikenyc.com">Citibike</a>, site by <a href="https://hsin.cool">Hsin</a> & <a href="http://melissavlin.com">Melissa </a>. Citi bike is a registered service mark of Citi group. </p>
+              <p>Station data provided by <a href="http://citibikenyc.com">Citibike</a>, site by <a href="https://hsin.cool">Hsin</a> & <a href="http://melissavlin.com">Melissa</a>. Citibike is a registered service mark of Citi group. </p>
             </div>
           </div>
 
