@@ -19,13 +19,13 @@ class StationController < ApplicationController
 	dist_list_sort_id = []
 	#production
 
-	#for all clones please use line 21 instead of line 23
-	#for a in (1..332)
+	#for all clones please use line 25 instead of line 28
+	
 
-	#for a in (1..332)
+	for a in (1..332)
 
 	#development
-	for a in (4..335)	
+	#for a in (4..335)	
 		dist_list << Station_dist(station, Station.find(a))
 		dist_list_id << a
 	end
