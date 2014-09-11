@@ -159,6 +159,41 @@ $(document).on('ready page:load', function() {
 
 	});
     
+    $("#nearMe").on("click", function(){
+
+      function success(position) {
+			  var latitude = position.coords.latitude;
+			  var longitude = position.coords.longitude;
+			  console.log(latitude+" "+longitude);
+			 // var altitude = position.coords.altitude;
+			 // var accuracy = position.coords.accuracy;
+		  $(".station").fadeOut();
+		  $(".station").remove();
+		  $.ajax({
+			type: 'POST',
+			url: '/data',
+			data: {nearMeLong: longitude, nearMeLat: latitude},
+			});
+			 
+			}
+			 
+		function error(error) {
+			 alert("Unable to retrieve your location due to "+error.code + " : " + error.message);
+			 };
+			 
+		var geo_options = {
+			 enableHighAccuracy: true,
+			 maximumAge : 30000,
+			 timeout : 27000
+			 }; 
+
+      if(navigator.geolocation){
+      	   $("#stationlist").append("<img src='/ajax-loader.gif' id='loader' >");
+          navigator.geolocation.getCurrentPosition(success, error, geo_options);
+      }else{
+          alert("Geolocation services are not supported by your web browser.");
+      }
+			    });
 	
 
   

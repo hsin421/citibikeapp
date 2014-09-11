@@ -22,10 +22,10 @@ class StationController < ApplicationController
 	#for all clones please use line 21 instead of line 23
 	#for a in (1..332)
 
-	for a in (1..332)
+	#for a in (1..332)
 
 	#development
-	#for a in (4..335)	
+	for a in (4..335)	
 		dist_list << Station_dist(station, Station.find(a))
 		dist_list_id << a
 	end
@@ -63,24 +63,6 @@ class StationController < ApplicationController
 		@temp = my_weather["current_observation"]["temperature_string"]
 		@wind = my_weather["current_observation"]["wind_string"]
 
-		# @icon = 1
-		# @time = 1
-		# @our_station1 = 1
-		# @our_station2 = 1
-		# @our_station3 = 1
-		# @our_station4 = 1
-		# @our_station5 = 1
-		# @our_station6 = 1
-		# @our_docks1 = 1
-		# @our_docks2 = 1
-		# @our_docks3 = 1
-		# @our_docks4 = 11
-		# @our_docks5 = 1
-		# @our_docks6 = 1
-		# @w_condition = 1
-		# @temp = 1
-		# @wind = "asdasdasasdasdadadsadasdasdadasdadsadasdadas"
-
 		
 			f = open(Rails.root.join("app","assets","M42east.csv"))
 		    a = f.read.split(",")
@@ -96,10 +78,6 @@ class StationController < ApplicationController
 		@timenext = Time.parse(b[1])
 	
 		@now = Time.now
-
-      
-        
-
 	end
 
 def about
@@ -108,8 +86,15 @@ def about
 end
 
 def data
-    @station_select = Station.find(params[:station_select].split("_")[1])
-	
+    near_me_long = params[:nearMeLong]
+	near_me_lat = params[:nearMeLat]
+
+    if params[:station_select] != "" && near_me_lat == ""
+       @station_select = Station.find(params[:station_select].split("_")[1])
+    elsif near_me_long != "" && near_me_lat != ""
+    	@station_select = Station.new("latidude"=> near_me_lat.to_f, "logitude" => near_me_long.to_f)
+    end
+
 	@stationgroup = []
 	cl = Closest(@station_select, 6)
 	@bikes = []
@@ -128,11 +113,11 @@ def data
 		@docks << my_bike["stationBeanList"][Station.find(a).position]["availableDocks"]
 	end
 
-	masterArray = cbdata(Rails.root.join("public","Citybike2014-07-24.csv"))
-    @warn = masterArray[3]
+	#masterArray = cbdata(Rails.root.join("public","Citybike2014-07-24.csv"))
+    #@warn = masterArray[3]
 
 
-	puts "**********{#{@bikes}, #{@docks}, #{@time}, #{@station_select.id}, #{@warn[254][0][1]}}*************"
+	puts "**********{#{@bikes}, #{@docks}, #{@time}, #{@station_select.id}}*************"
 
 end	
 
@@ -220,7 +205,15 @@ end
 
 	    cs1 = params[:cs1]
 	    cs2 = params[:cs2]
-	    @Stations = []
+	    # near_me_long = params[:nearMeLong]
+	    # near_me_lat = params[:nearMeLat]
+	     @Stations = []
+     #    if near_me_lat != "" && near_me_long != ""
+     #          fakestation = Station.new("latidude"=> near_me_lat.to_f, "logitude" => near_me_long.to_f)
+     #          nearme_stations = Closest(fakestation, 5)
+     #          nearme_stations.each do |id|
+     #         	@Stations << Station.find(id)
+     #         end
 
 	    if cs2 == "" && cs1	
 	    	@Stations = find_station(cs_name(cs1), nil)         
