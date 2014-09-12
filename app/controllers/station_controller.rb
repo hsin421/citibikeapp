@@ -89,7 +89,7 @@ def data
     near_me_long = params[:nearMeLong]
 	near_me_lat = params[:nearMeLat]
 
-    if params[:station_select] != "" && near_me_lat == ""
+    if params[:station_select] != "" 
        @station_select = Station.find(params[:station_select].split("_")[1])
     elsif near_me_long != "" && near_me_lat != ""
     	@station_select = Station.new("latidude"=> near_me_lat.to_f, "logitude" => near_me_long.to_f)
