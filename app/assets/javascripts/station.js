@@ -169,10 +169,11 @@ $(document).on('ready page:load', function() {
 			 // var accuracy = position.coords.accuracy;
 		  $(".station").fadeOut();
 		  $(".station").remove();
+		  $("#stationlist_header").remove();
 		  $.ajax({
 			type: 'POST',
 			url: '/data',
-			data: {nearMeLong: longitude, nearMeLat: latitude},
+			data: {nearMeLong: longitude, nearMeLat: latitude, station_select: "none"}
 			});
 			 
 			}

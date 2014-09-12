@@ -30,7 +30,7 @@ function clickable() {
               $.ajax({
                      type: 'POST',
        				 url: '/data',
-     			     data: {station_select: $(this)[0].id},
+     			     data: {station_select: $(this)[0].id, nearMeLong: "none", nearMeLat: "none"}
               });
 
 				
