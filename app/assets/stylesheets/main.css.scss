@@ -19,7 +19,8 @@ height: 100%;
 	-o-background-size: cover;
 	background-size: cover;
    @media (max-width: 450px){
-		background-position: -90px 0px;
+		background: url(/citibikebridge_mobile.jpg) no-repeat center center fixed;
+		// background-position: -90px 0px;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
@@ -181,7 +182,9 @@ a {
 	   top: 50%;
 	   transform: translateY(-50%);
 	}
-
+	@media (max-width: 450px) {
+		height: 60px;
+	}
 }
 
 #stationSearchWrap {
@@ -196,6 +199,9 @@ a {
 	overflow:scroll;
 	text-align: center;
 	border: 1px solid $limecolor;
+	@media (max-width: 450px){
+		width: 300px;
+	}
 	#searchHeader {
 		font-weight: bold;
 		font-size: 18px;
