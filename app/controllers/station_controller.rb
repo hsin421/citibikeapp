@@ -85,6 +85,10 @@ def about
 
 end
 
+def tutorial
+    @page = 3
+end
+
 def data
     near_me_long = params[:nearMeLong]
 	near_me_lat = params[:nearMeLat]

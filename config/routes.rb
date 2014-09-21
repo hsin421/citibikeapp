@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get 'sessions/create'
+  get 'tutorial' => 'station#tutorial'
 
   get 'login' => 'sessions#new'
   post 'sessions' => 'session#create'
