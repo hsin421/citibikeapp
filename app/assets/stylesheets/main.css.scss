@@ -368,14 +368,33 @@ a {
 
 #about_section .title {
 	font-size: 3vw;
+	font-weight: bold;
 }
 
 #about_section .subtitle {
 	font-size: 2vw;
+	font-weight: bold;
 }
 #about_section p {
 	font-size: 1.5vw;
+	
 }
+
+@media (max-width: 900px) {
+		#about_section .title {
+				font-size: 4.5vw;
+				font-weight: bold;
+			}
+
+			#about_section .subtitle {
+				font-size: 3.5vw;
+				font-weight: bold;
+			}
+			#about_section p {
+				font-size: 3vw;
+
+			}
+	}
 
 .station {
 	width: 305px;
